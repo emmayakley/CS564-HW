@@ -9,6 +9,7 @@ function handleInput(e) {
   if (isNaN(user_input) || parseInt(user_input) < 0) {
     const outputDiv = document.getElementById("palindromeOutput");
     outputDiv.innerText = "Please enter a positive number.";
+    outputDiv.style.color = "rgb(255, 0, 0)";
   } else {
     isPalindrome(user_input);
   }
@@ -22,10 +23,9 @@ function isPalindrome(num) {
 
   if (numberString === reverse) {
     outputDiv.innerText = "Yes. This is a palindrome!";
-    outputDiv.style.color = "green";
-    
+    outputDiv.style.color = "rgb(0, 128, 0)";
   } else if (numberString !== reverse) {
     outputDiv.innerText = "No. Try again.";
-    outputDiv.style.color = "red";
+    outputDiv.style.color = "rgb(255, 0, 0)";
   }
 }
