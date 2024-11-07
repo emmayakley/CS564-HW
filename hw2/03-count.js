@@ -1,18 +1,30 @@
-// Add your code here
 const input = document.getElementById("userInput");
 const textOutput = document.getElementById("textBlock");
-const originalText = textOutput.textContent; //save original text for resetting purposes
 
 input.addEventListener("keydown", handleKeyDown);
 
-function handleKeyDown() {
-  inputWord = input.value.trim().toLowerCase();
-
-  if (!inputWord) {
-    //reset to base text when nothing is written
-    textOutput.innerText = originalText;
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    updateText();
   }
+}
 
+function updateText() {
+  inputWord = input.value.trim();
+
+  if (inputWord !== "") {
+    const regExp = new RegExp(`\\b${inputWord}\\b`, "gi");
+    const wordsToHighlight = textOutput.textContent.replace(
+      regExp,
+      '<span class="bg-warning">$&</span>'
+    );
+    textOutput.innerHTML = wordsToHighlight;
+  } else {
+    textOutput.innerHTML = textOutput.textContent;
+  }
+}
+/*
   const splitWords = originalText.split(" ");
   const matchedWords = splitWords.map((word) => {
     const onlyText = word
@@ -28,6 +40,7 @@ function handleKeyDown() {
   textOutput.innerHTML = matchedWords.join(" ");
 }
 
+
 const style = document.createElement("style");
 style.innerHTML = `
   .highlight {
@@ -36,3 +49,4 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+*/
