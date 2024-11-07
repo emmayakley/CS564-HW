@@ -7,6 +7,11 @@ document
 
 function handleClick() {
   const userInput = document.getElementById("userInput").value.toLowerCase();
+
+  if (userInput === "" || userInput === " ") {
+    return;
+  }
+
   //const outputDiv = document.getElementById("characterOutput");
 
   const resultsDiv = document.getElementById("results");
@@ -26,7 +31,7 @@ function handleClick() {
   } else {
     characterMatches.forEach((character) => {
       const card = document.createElement("div");
-      card.classList.add("card", "mb-5");
+      card.classList.add("card", "mx-2", "my-2", "w-25");
 
       card.innerHTML = `
         <div class="characterCard"> 
