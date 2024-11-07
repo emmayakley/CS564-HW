@@ -3,7 +3,7 @@
 const form = document.getElementById("userForm");
 const modalContent = document.getElementById("modalContent");
 
-const modal = new boostrap.Modal(document.querySelector(".modal"));
+const modal = new bootstrap.Modal(document.querySelector(".modal"));
 
 form.addEventListener("submit", handleEvent);
 
