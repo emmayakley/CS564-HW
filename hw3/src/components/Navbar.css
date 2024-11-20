@@ -3,10 +3,10 @@
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  background-color: lightgray;
+  
 }
 
 .navlink {
   text-decoration: none;
-  color: black;
+  color: #10457e;
 }

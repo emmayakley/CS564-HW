@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getCountries} from '../api/getCountries';
 import { Pie } from 'react-chartjs-2';
+import './Language.css'
 
-const Custom = () => {
+const Language = () => {
   const [chartData, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -43,7 +44,7 @@ const Custom = () => {
   if (error) return <p>{error}</p>
 
   return (
-    <div>
+    <div className = 'lang-style'>
       <h1>South American Languages</h1>
       {chartData && (
         <Pie 
@@ -67,4 +68,4 @@ const Custom = () => {
   )
 }
 
-export default Custom;
+export default Language;

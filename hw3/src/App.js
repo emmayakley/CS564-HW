@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import List from './pages/List';
 import Population from './pages/Population';
-import Custom from './pages/Custom';
+import Language from './pages/Language';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/list" element={<List />} />
         <Route path="/population" element={<Population />} />
-        <Route path="/custom" element={<Custom />} />
+        <Route path="/language" element={<Language />} />
       </Routes>
     </Router>
   );
