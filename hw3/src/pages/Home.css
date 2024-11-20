@@ -1,0 +1,16 @@
+.homepage {
+  text-align: center;
+  background-image: url('/south-america.png');
+  height: 100vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.homepage h1 {
+  color: #12107e;
+}
+
+.homepage h4 {
+  color: #10457e;
+}
